@@ -46,11 +46,13 @@
 <script>
   const DARK_THEME_CLASS = "dark" as const;
 
-  const toggle = document.querySelector("[data-theme-toggle]") as HTMLButtonElement;
+  const toggle = document.querySelector(
+    "[data-theme-toggle]",
+  ) as HTMLAttributes;
   const html = document.querySelector("html") as HTMLHtmlElement;
 
   function initializeTheme() {
-    const storedTheme = localStorage.getItem("theme") ?? '';
+    const storedTheme = localStorage.getItem("theme") ?? "";
 
     if (storedTheme === DARK_THEME_CLASS) {
       html.classList.add(DARK_THEME_CLASS);
