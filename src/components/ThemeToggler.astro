@@ -78,7 +78,7 @@
       if (html.classList.contains(DARK_THEME_CLASS)) {
         localStorage.setItem("theme", DARK_THEME_CLASS);
       } else {
-        localStorage.removeItem("theme");
+        localStorage.setItem("theme", "light");
       }
     });
   }
