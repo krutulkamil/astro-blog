@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+import NavigationBar from "../components/NavigationBar.astro";
 import "../styles/global.css";
 ---
 
@@ -9,14 +11,19 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Frau Katerina's website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Astro</title>
   </head>
   <body>
     <main>
+      <NavigationBar />
       <slot />
+      <Footer />
     </main>
   </body>
 </html>
