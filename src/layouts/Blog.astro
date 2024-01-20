@@ -20,7 +20,7 @@ const { title, subtitle, poster } = Astro.props.frontmatter;
       height="480px"
       class="figure__image"
     />
-    <figcaption>
+    <figcaption class="figure__caption">
       Poster image for {title.toLowerCase()}
     </figcaption>
   </figure>
@@ -30,3 +30,22 @@ const { title, subtitle, poster } = Astro.props.frontmatter;
 
   <slot />
 </Main>
+
+<style>
+  h1 + h2 {
+    margin-bottom: 3rem;
+  }
+
+  .figure {
+    margin: 0;
+  }
+
+  .figure__image {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .figure__caption {
+    font-size: 0.9rem;
+  }
+</style>
