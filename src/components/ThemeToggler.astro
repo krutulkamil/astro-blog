@@ -51,22 +51,6 @@
   ) as HTMLAttributes;
   const html = document.querySelector("html") as HTMLHtmlElement;
 
-  function initializeTheme() {
-    const storedTheme = localStorage.getItem("theme") ?? "";
-
-    if (storedTheme === DARK_THEME_CLASS) {
-      html.classList.add(DARK_THEME_CLASS);
-    } else {
-      html.classList.remove(DARK_THEME_CLASS);
-
-      if (!html.classList.length) {
-        html.removeAttribute("class");
-      }
-    }
-  }
-
-  initializeTheme();
-
   if (toggle) {
     toggle.addEventListener("click", () => {
       html.classList.toggle(DARK_THEME_CLASS);
@@ -76,9 +60,9 @@
       }
 
       if (html.classList.contains(DARK_THEME_CLASS)) {
-        localStorage.setItem("theme", DARK_THEME_CLASS);
+        window.localStorage.setItem("theme", DARK_THEME_CLASS);
       } else {
-        localStorage.setItem("theme", "light");
+        window.localStorage.setItem("theme", "light");
       }
     });
   }

@@ -18,6 +18,26 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <title>Astro</title>
+    <script is:inline>
+      const DARK_THEME_CLASS = "dark";
+      const html = document.querySelector("html");
+
+      function initializeTheme() {
+        const storedTheme = window.localStorage.getItem("theme") ?? "";
+
+        if (storedTheme === DARK_THEME_CLASS) {
+          html.classList.add(DARK_THEME_CLASS);
+        } else {
+          html.classList.remove(DARK_THEME_CLASS);
+
+          if (!html.classList.length) {
+            html.removeAttribute("class");
+          }
+        }
+      }
+
+      initializeTheme();
+    </script>
   </head>
   <body>
     <main>
