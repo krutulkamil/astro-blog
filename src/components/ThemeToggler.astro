@@ -45,21 +45,20 @@
 
 <script>
   const DARK_THEME_CLASS = "dark" as const;
-
   const toggle = document.querySelector(
     "[data-theme-toggle]",
-  ) as HTMLAttributes;
-  const html = document.querySelector("html") as HTMLHtmlElement;
+  );
+  const html = document.querySelector("html");
 
   if (toggle) {
     toggle.addEventListener("click", () => {
-      html.classList.toggle(DARK_THEME_CLASS);
+      html?.classList.toggle(DARK_THEME_CLASS);
 
-      if (!html.classList.length) {
-        html.removeAttribute("class");
+      if (!html?.classList.length) {
+        html?.removeAttribute("class");
       }
 
-      if (html.classList.contains(DARK_THEME_CLASS)) {
+      if (html?.classList.contains(DARK_THEME_CLASS)) {
         window.localStorage.setItem("theme", DARK_THEME_CLASS);
       } else {
         window.localStorage.setItem("theme", "light");

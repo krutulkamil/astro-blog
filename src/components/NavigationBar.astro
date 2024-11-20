@@ -53,7 +53,7 @@ import ThemeToggler from "@components/ThemeToggler.astro";
   const { pathname } = window.location;
 
   const activeLink = document.querySelector(
-    `nav a[href="${pathname}"]` as HTMLAnchorElement,
+    `nav a[href="${pathname}"]`,
   );
 
   if (activeLink) {

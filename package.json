@@ -8,6 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "check": "astro check",
     "lint": "npm-run-all --parallel lint:astro lint:js+ts lint:format lint:types",
     "lint:astro": "astro check",
     "lint:js+ts": "eslint --ext .astro,.js,.jsx,.cjs,.ts,.tsx,.cts --ignore-path .gitignore .",
